@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import '../components/styles/HeaderStyled.css'
 
-const imagemLogo = '../images/LogoK.png';
+const imagemLogo = '../components/images/LogoK.png';
 const HeaderPage = () => {
 
     return (

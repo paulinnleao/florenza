@@ -38,4 +38,6 @@ export default App;
 
 const Header = styled.div``;
 const Footer = styled.div``;
-const Body = styled.div``;
+const Body = styled.div`
+    color: #404040;
+`;
