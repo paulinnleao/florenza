@@ -5,6 +5,7 @@ import { HomePage } from './HomePage';
 import MenuPage from './MenuPage';
 
 import '../components/styles/AppStyled.css'
+import FooterPage from './FooterPage';
 const App = () => {
 
     return (
@@ -21,7 +22,7 @@ const App = () => {
                             </Routes>
                     </Body>
                     <Footer>
-                        
+                        <FooterPage />
                     </Footer>
                     
                 </BrowserRouter>
@@ -36,8 +37,12 @@ export default App;
 
 
 
-const Header = styled.div``;
-const Footer = styled.div``;
+const Header = styled.div`
+    padding: 0.9rem;
+    `;
+const Footer = styled.div`
+    background-color: #404040;
+`;
 const Body = styled.div`
-    color: #404040;
+    background-color: #404040;
 `;

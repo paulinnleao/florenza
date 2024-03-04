@@ -1,20 +1,167 @@
-import {Button} from 'semantic-ui-react';
+import {Button, Image} from 'semantic-ui-react';
 import {useNavigate} from "react-router-dom";
+import { Div } from '../components/util/utilStyledHtml';
+
+const backgroundImage = '../components/images/planoDeFundo.jpeg'
 
 export const  HomePage = () => {
 
-    const history = useNavigate();
-    const handleClick = () => {
-        history.push("/menu");
-    }
+    const navigate = useNavigate();
     return (
-        <>
+        <Div>
+            <Image src={backgroundImage}/>
             <Button 
             size = 'massive'
-            onClick={handleClick}>
-                Clique aqui para ver o menu
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
             </Button>
-        </>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+            <Button 
+            size = 'massive'
+            onClick={() => navigate("/menu")}>
+                Clique aqui para ver o cardápio
+            </Button>
+        </Div>
     )
 
 };
+
