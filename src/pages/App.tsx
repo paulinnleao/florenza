@@ -18,7 +18,7 @@ const App = () => {
                     <Body>
                             <Routes>
                                 <Route path="/home" element={<HomePage />}/>
-                                <Route patth="/menu" element={<MenuPage />} />
+                                <Route path="/menu" element={<MenuPage />}/>
                             </Routes>
                     </Body>
                     <Footer>

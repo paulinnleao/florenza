@@ -1,40 +1,48 @@
-import { Image } from "semantic-ui-react";
+import { Button, Image } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import '../components/styles/HeaderStyled.css'
 import { Div } from "../components/util/utilStyledHtml";
+import { useEffect, useState } from "react";
+import { LogoK } from "../components/images";
 
-const imagemLogo = '../components/images/LogoK.png';
 const HeaderPage = () => {
+    const [ativo, setAtivo] = useState<string>('inicio');
 
+    useEffect(()=>{},[ativo]);
     return (
         <DivStyled>
-                <Image src={imagemLogo} size="tiny" verticalAlign = 'middle' floated="left" />
+                <Image src={LogoK} size='small' />
                 <Nav>
                     <NavLink
-                        to="/home"
                         style={({ isActive, isPending, isTransitioning }) => {
                             return {
                             fontWeight: isActive ? "bold" : "",
-                            color: isPending ? "red" : "white",
-                            fontSize:"medium",
+                            color: isPending ? "red" : "black",
                             viewTransitionName: isTransitioning ? "slide" : "",
+                            backgroundColor: "#404040",
                             };
                         }}
+                        to="/home"
                         >
-                            Inicio
+                            <Button onClick={()=>setAtivo('inicio')} color={(ativo==='inicio')?'blue':'red'}>
+                                Inicio
+                            </Button>
                     </NavLink>
                     <NavLink
-                        to="/menu"
                         style={({ isActive, isPending, isTransitioning }) => {
                             return {
                             fontWeight: isActive ? "bold" : "",
-                            color: isPending ? "red" : "white",
+                            color: isPending ? "red" : "black",
                             viewTransitionName: isTransitioning ? "slide" : "",
+                            backgroundColor: "#404040",
                             };
                         }}
+                        to="/menu"
                         >
-                            Cardápio
+                            <Button onClick={()=>setAtivo('cardapio')} color={(ativo==='cardapio')?'blue':'red'}>
+                                Cardápio
+                            </Button>
                     </NavLink>
                 </Nav>
         </DivStyled>
