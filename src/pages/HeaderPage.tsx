@@ -20,7 +20,8 @@ const HeaderPage = () => {
                             fontWeight: isActive ? "bold" : "",
                             color: isPending ? "red" : "black",
                             viewTransitionName: isTransitioning ? "slide" : "",
-                            backgroundColor: "#404040",
+                            backgroundColor: "rgb(0,0,0,0)",
+                            padding: '0',
                             };
                         }}
                         to="/home"
@@ -35,7 +36,8 @@ const HeaderPage = () => {
                             fontWeight: isActive ? "bold" : "",
                             color: isPending ? "red" : "black",
                             viewTransitionName: isTransitioning ? "slide" : "",
-                            backgroundColor: "#404040",
+                            backgroundColor: "rgb(0,0,0,0)",
+                            padding: '0',
                             };
                         }}
                         to="/menu"

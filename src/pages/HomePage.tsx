@@ -8,7 +8,7 @@ export const  HomePage = () => {
 
     const navigate = useNavigate();
     return (
-        <Div>
+        <Div style={{margin:"auto"}}>
             <Image src={backgroundImage}/>
             <Button 
             size = 'massive'

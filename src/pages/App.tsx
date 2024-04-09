@@ -10,12 +10,12 @@ const App = () => {
 
     return (
         <>
-            <Body>
+            <Body >
                 <BrowserRouter>
                     <Header>
                         <HeaderPage />
                     </Header>
-                    <Body>
+                    <Body >
                             <Routes>
                                 <Route path="/home" element={<HomePage />}/>
                                 <Route path="/menu" element={<MenuPage />}/>
@@ -39,10 +39,16 @@ export default App;
 
 const Header = styled.div`
     padding: 0.9rem;
+    position: sticky; 
+    top: 0;
     `;
 const Footer = styled.div`
     background-color: #404040;
+    position: sticky; 
+    bottom: 0;
 `;
 const Body = styled.div`
     background-color: #404040;
+    height: 100vh;
+    margin:auto;
 `;
