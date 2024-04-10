@@ -21,9 +21,9 @@ const  MenuPage = () => {
                 >
                     
                     <ModalHeader>Pedido</ModalHeader>
-                    <ModalContent image style={{width:"100%", gap:'20px', display:"flex", textAlign: "center"}}>
+                    <ModalContent image style={{width:"100%", gap:'20px', display:"flex", textAlign: "center", alignItems:"center"}}>
                         <Image size='medium' src={!! pizzaModal?.image ? pizzaModal?.image : LogoK} wrapped />
-                        <ModalDescription>
+                        <ModalDescription style={{display:"flex",gap:"40px", flexDirection:"column"}}>
                         <Header style={{textTransform:"uppercase"}}>{pizzaModal?.nome}</Header>
                         <DivModal>
                             {pizzaModal?.ingredients.map((value)=><div style={{gap:"10px",textTransform:"uppercase", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
@@ -31,7 +31,7 @@ const  MenuPage = () => {
                                 {value}
                                 <div style={{display:"flex", gap:"10px", alignItems: "center"}}>
                                     <Button icon="minus" color="red" />
-                                    Não sei
+                                        Não sei
                                     <Button icon="plus" color="green" />
                                 </div>
                             </div>)}
