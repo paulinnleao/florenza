@@ -6,15 +6,36 @@ import { Div } from "../components/util/utilStyledHtml";
 import { useEffect, useState } from "react";
 import { LogoK } from "../components/images";
 
-const HeaderPage = () => {
-    const [ativo, setAtivo] = useState<string>('inicio');
+interface ElementosHeaderProps {
+    nome: string;
+    link: string;
+}
 
-    useEffect(()=>{},[ativo]);
+const elementosHeader: ElementosHeaderProps[] = [
+ {
+    nome: 'Inicio',
+    link: 'home',
+
+ },
+ {
+    nome: 'Cardápio',
+    link: 'menu',
+ },
+ {
+    nome: 'Sacola',
+    link: 'sacola',
+ }
+]
+
+const HeaderPage = ({paginaAtualHeader, setPaginaAtualHeader}:any) => {
+
+    useEffect(()=>{},[paginaAtualHeader]);
     return (
         <DivStyled>
-                <Image src={LogoK} size='small' />
+                <Image src={LogoK} size='mini' />
                 <Nav>
-                    <NavLink
+                    {elementosHeader.map((value, id)=><NavLink
+                        key={id}
                         style={({ isActive, isPending, isTransitioning }) => {
                             return {
                             fontWeight: isActive ? "bold" : "",
@@ -24,28 +45,13 @@ const HeaderPage = () => {
                             padding: '0',
                             };
                         }}
-                        to="/home"
+                        to={`/${value.link}`}
                         >
-                            <Button onClick={()=>setAtivo('inicio')} color={(ativo==='inicio')?'blue':'red'}>
-                                Inicio
+                            <Button onClick={()=>setPaginaAtualHeader(value.nome)} color={(paginaAtualHeader===value.nome)?'red':'blue'}>
+                                {value.nome}
                             </Button>
-                    </NavLink>
-                    <NavLink
-                        style={({ isActive, isPending, isTransitioning }) => {
-                            return {
-                            fontWeight: isActive ? "bold" : "",
-                            color: isPending ? "red" : "black",
-                            viewTransitionName: isTransitioning ? "slide" : "",
-                            backgroundColor: "rgb(0,0,0,0)",
-                            padding: '0',
-                            };
-                        }}
-                        to="/menu"
-                        >
-                            <Button onClick={()=>setAtivo('cardapio')} color={(ativo==='cardapio')?'blue':'red'}>
-                                Cardápio
-                            </Button>
-                    </NavLink>
+                    </NavLink>)}
+                    
                 </Nav>
         </DivStyled>
     )
@@ -54,6 +60,9 @@ const HeaderPage = () => {
 export default HeaderPage;
 
 const DivStyled = styled(Div)`
+    display: flex;
+    justify-content: flex-start;
+    gap: 500px;
 `;
 const Nav = styled.nav`
     display: flex;

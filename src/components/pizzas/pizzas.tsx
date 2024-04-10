@@ -1,3 +1,4 @@
+import { OutraLogo } from "../images";
 import {PizzaProps} from "./PizzasPage"
 interface PizzaCadastro {
     tradicionais : PizzaProps[];
@@ -8,6 +9,7 @@ interface PizzaCadastro {
 const pizzas : PizzaCadastro = {
     "tradicionais" : [
         {
+            image: OutraLogo,
             nome: "calabresa",
             tamanhoPreco: [
                 {
@@ -16,7 +18,7 @@ const pizzas : PizzaCadastro = {
                 },
                 {
                     t: "media",
-                    p: 48.00,
+                    p: 48.37,
                 },
                 {
                     t: "grande",
@@ -29,11 +31,84 @@ const pizzas : PizzaCadastro = {
                 'molho de tomate',
                 'queijo',
             ]
-        }
+        },
+        {
+            image: OutraLogo,
+            nome: "calabresa",
+            tamanhoPreco: [
+                {
+                    t: "pequena",
+                    p: 38.00,
+                },
+                {
+                    t: "media",
+                    p: 48.37,
+                },
+                {
+                    t: "grande",
+                    p: 53.00,
+                }
+            ],
+            ingredients: [
+                'calabresa',
+                'tomate',
+                'molho de tomate',
+                'queijo',
+            ]
+        },
+        {
+            image: OutraLogo,
+            nome: "calabresa",
+            tamanhoPreco: [
+                {
+                    t: "pequena",
+                    p: 38.00,
+                },
+                {
+                    t: "media",
+                    p: 48.37,
+                },
+                {
+                    t: "grande",
+                    p: 53.00,
+                }
+            ],
+            ingredients: [
+                'calabresa',
+                'tomate',
+                'molho de tomate',
+                'queijo',
+            ]
+        },
+        {
+            image: OutraLogo,
+            nome: "calabresa",
+            tamanhoPreco: [
+                {
+                    t: "pequena",
+                    p: 38.00,
+                },
+                {
+                    t: "media",
+                    p: 48.37,
+                },
+                {
+                    t: "grande",
+                    p: 53.00,
+                }
+            ],
+            ingredients: [
+                'calabresa',
+                'tomate',
+                'molho de tomate',
+                'queijo',
+            ]
+        },
         
     ],
     "pizzasDaCasa" : [
         {
+            image: OutraLogo,
             nome: "catupiry",
             tamanhoPreco: [
                 {
@@ -60,6 +135,7 @@ const pizzas : PizzaCadastro = {
     ],
     "pizzasDoces" : [
         {
+            image: OutraLogo,
             nome: "calabresa",
             tamanhoPreco: [
                 {
