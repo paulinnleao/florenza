@@ -13,7 +13,7 @@ export interface PizzaProps {
     ingredients: string[];
 }
 
-const PizzasPage = () =>  {
+const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
 
    return <div style={{padding:"50px 0"}}>
     
@@ -29,7 +29,10 @@ const PizzasPage = () =>  {
                   <DescricaoPizza><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
                     <p style={{textTransform:"uppercase"}}>{value.t}</p>
                     <p>R$ {value.p}</p>
-                    <Button style={{position: "static"}} onClick={()=>""} icon='add to cart'/>
+                    <Button style={{position: "static"}} onClick={()=>{
+                      setOpenModal(true)
+                      setPizzaModal({...pizza, t: value.t, p: value.p})
+                    }} icon='add to cart'/>
                   </div>)}
                 </DescricaoPizza>
               </div>
@@ -50,7 +53,10 @@ const PizzasPage = () =>  {
                   <DescricaoPizza><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
                     <p style={{textTransform:"uppercase"}}>{value.t}</p>
                     <p>R$ {value.p}</p>
-                    <Button style={{position: "static"}} onClick={()=>""} icon='add to cart' />
+                    <Button style={{position: "static"}} onClick={()=>{
+                      setOpenModal(true)
+                      setPizzaModal({...pizza, t: value.t, p: value.p})
+                    }} icon='add to cart'/>
                   </div>)}
                 </DescricaoPizza>
               </div>
@@ -71,7 +77,10 @@ const PizzasPage = () =>  {
                   <DescricaoPizza><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
                     <p style={{textTransform:"uppercase"}}>{value.t}</p>
                     <p>R$ {value.p}</p>
-                    <Button style={{position: "static"}} onClick={()=>""} icon='add to cart' />
+                    <Button style={{position: "static"}} onClick={()=>{
+                      setOpenModal(true)
+                      setPizzaModal({...pizza, t: value.t, p: value.p})
+                    }} icon='add to cart'/>
                   </div>)}
                 </DescricaoPizza>
               </div>
