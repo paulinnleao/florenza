@@ -1,5 +1,6 @@
 import { OutraLogo } from "../images";
-import {PizzaProps} from "./PizzasPage"
+import { PizzaProps } from "../util/PropsUtils";
+
 interface PizzaCadastro {
     tradicionais : PizzaProps[];
     pizzasDaCasa : PizzaProps[];

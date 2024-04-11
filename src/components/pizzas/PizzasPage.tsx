@@ -1,23 +1,47 @@
 import React from 'react'
 import pizzas from './pizzas';
 import styled from 'styled-components';
-import { Button, Icon, Image } from 'semantic-ui-react';
-
-export interface PizzaProps {
-    image: string;
-    nome: string;
-    tamanhoPreco: {
-        t: string,
-        p: number,
-    }[];
-    ingredients: string[];
-}
+import { Button, Image, Item, ItemContent, ItemDescription, ItemGroup, ItemHeader, ItemImage, ItemMeta } from 'semantic-ui-react';
 
 const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
 
    return <div style={{padding:"50px 0"}}>
     
     <h2>Tradicionais</h2>
+    <ItemGroup style={{padding:"3rem"}}>
+        {pizzas.tradicionais.map((pizza, id) => 
+          <Item key={id}>
+            <ItemImage size='small' src={pizza.image} />
+            <ItemContent>
+              <ItemHeader>{pizza.nome}</ItemHeader>
+              <ItemMeta>
+              <DescricaoPizza><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
+                    <p style={{textTransform:"uppercase"}}>{value.t}</p>
+                    <p>R$ {value.p}</p>
+                    <Button style={{position: "static"}} onClick={()=>{
+                      setOpenModal(true)
+                      setPizzaModal({...pizza, t: value.t, p: value.p})
+                    }} icon='add to cart'/>
+                  </div>)}
+                </DescricaoPizza>
+              </ItemMeta>
+              <ItemDescription>
+                <p><strong>Ingredientes:</strong> {pizza.ingredients.map((ingrediente, id)=>
+                <label>{ingrediente}{(!!(id+1))?' ':' -'}</label>)}</p>
+              </ItemDescription>
+            </ItemContent>
+          </Item>
+          )}
+    </ItemGroup>
+
+
+
+
+
+
+
+
+
       <CardPizza>
         {pizzas.tradicionais.map((pizza, id) => 
         <PizzaComponent key={id}>

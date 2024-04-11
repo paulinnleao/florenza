@@ -1,13 +1,15 @@
-import { Button, Header, Image, List, ListContent, ListHeader, ListItem, Modal, ModalActions, ModalContent, ModalDescription, ModalHeader } from "semantic-ui-react";
+import { Button, ButtonOr, Header, Image, List, ListContent, ListHeader, ListItem, Modal, ModalActions, ModalContent, ModalDescription, ModalHeader } from "semantic-ui-react";
 import { Div } from "../components/util/utilStyledHtml";
-import PizzasPage, { PizzaProps } from "../components/pizzas/PizzasPage";
+import PizzasPage from "../components/pizzas/PizzasPage";
 import { useState } from "react";
 import { LogoK } from "../components/images";
 import styled from "styled-components";
+import { AdicionalProps, PizzaProps } from "../components/util/PropsUtils";
 
 const  MenuPage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [pizzaModal, setPizzaModal] = useState<PizzaProps>();
+    const [adicional, setAdicional] = useState<AdicionalProps>();
     console.log(pizzaModal)
     return (
         <Div>
@@ -31,23 +33,23 @@ const  MenuPage = () => {
                                 {value}
                                 <div style={{display:"flex", gap:"10px", alignItems: "center"}}>
                                     <Button icon="minus" color="red" />
-                                        Não sei
+                                    <ButtonOr style={{color:"black"}} text={0} />
                                     <Button icon="plus" color="green" />
                                 </div>
                             </div>)}
                         </DivModal>
                         </ModalDescription>
-                    </ModalContent>
-                    <ModalActions>
-                        <Button content="Voltar" color='black' onClick={() => setOpenModal(false)} />
-                        <Button
-                        content="Adicionar"
-                        labelPosition='right'
-                        icon='checkmark'
-                        onClick={() => setOpenModal(false)}
-                        positive
-                        />
-                    </ModalActions>
+                        </ModalContent>
+                        <ModalActions>
+                            <Button content="Voltar" color='black' onClick={() => setOpenModal(false)} />
+                            <Button
+                            content="Adicionar"
+                            labelPosition='right'
+                            icon='checkmark'
+                            onClick={() => setOpenModal(false)}
+                            positive
+                            />
+                        </ModalActions>
                 </Modal>
         </Div>
     ); 
