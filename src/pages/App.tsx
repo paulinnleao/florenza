@@ -39,17 +39,16 @@ const Header = styled.div`
     padding: 0.9rem;
     position: sticky; 
     top: 0;
-    //background-color: #404040;
     border-bottom: solid 2px black;
+    background-image: url('src/components/images/FundoSite.png');
     `;
-const Footer = styled.div`
-    //background-color: #404040;
-    position: sticky; 
-    bottom: 0;
-`;
+    
 const Body = styled.div`
-    //background-color: #404040;
-    /* height: 100vh; */
-    background-image: ${FundoSite};
     margin:auto;
+    width: 100%;
+    height: 100%;
+`;
+const Footer = styled.div`
+    /* position: sticky;  */
+    bottom: 0;
 `;

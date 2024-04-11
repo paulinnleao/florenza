@@ -1,6 +1,6 @@
 import { Button, ButtonOr, Header, Image, List, ListContent, ListHeader, ListItem, Modal, ModalActions, ModalContent, ModalDescription, ModalHeader } from "semantic-ui-react";
 import { Div } from "../components/util/utilStyledHtml";
-import PizzasPage from "../components/pizzas/PizzasPage";
+import PizzasPage from "./PizzasPage";
 import { useState } from "react";
 import { LogoK } from "../components/images";
 import styled from "styled-components";
