@@ -40,8 +40,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                 </DescricaoPizza>
               </ItemMeta>
               <ItemDescription>
-                <p><strong>Ingredientes:</strong> {pizza.ingredients.map((ingrediente, id)=>
-                <label key={id}>{ingrediente}{(!!(id+1))?' ':' -'}</label>)}</p>
+                <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredients.join(", ")}.</label></p>
               </ItemDescription>
             </ItemContent>
           </Item>
@@ -81,8 +80,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                 </DescricaoPizza>
               </ItemMeta>
               <ItemDescription>
-                <p><strong>Ingredientes:</strong> {pizza.ingredients.map((ingrediente, id)=>
-                <label key={id}>{ingrediente}{(!!(id+1))?' ':' -'}</label>)}</p>
+              <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredients.join(", ")}.</label></p>
               </ItemDescription>
             </ItemContent>
           </Item>
@@ -122,8 +120,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                 </DescricaoPizza>
               </ItemMeta>
               <ItemDescription>
-                <p><strong>Ingredientes:</strong> {pizza.ingredients.map((ingrediente, id)=>
-                <label key={id}>{ingrediente}{(!!(id+1))?' ':' -'}</label>)}</p>
+              <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredients.join(", ")}.</label></p>
               </ItemDescription>
             </ItemContent>
           </Item>
