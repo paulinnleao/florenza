@@ -1,7 +1,7 @@
-import { Button, ButtonOr, Header, Image, List, ListContent, ListHeader, ListItem, Modal, ModalActions, ModalContent, ModalDescription, ModalHeader } from "semantic-ui-react";
+import { Button, Form, Header, Image, Modal, ModalActions, ModalContent, ModalDescription, ModalHeader } from "semantic-ui-react";
 import { Div } from "../components/util/utilStyledHtml";
 import PizzasPage from "./PizzasPage";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { LogoK } from "../components/images";
 import styled from "styled-components";
 import { AdicionalProps, PizzaProps } from "../components/util/PropsUtils";
@@ -9,8 +9,23 @@ import { AdicionalProps, PizzaProps } from "../components/util/PropsUtils";
 const  MenuPage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [pizzaModal, setPizzaModal] = useState<PizzaProps>();
-    const [adicional, setAdicional] = useState<AdicionalProps>();
-    console.log(pizzaModal)
+    const adicional = useMemo<AdicionalProps>(
+         () => {
+            if(!!pizzaModal?.ingredients){
+                return pizzaModal?.ingredients.map((value)=>{
+                    return {
+                        ingrediente: value,
+                        quantidade: 0
+                        }
+                    });
+                }
+            return [
+                {
+                    ingrediente: 'nada',
+                    quantidade: 0,
+                }
+            ]
+    }, [pizzaModal]);
     return (
         <Div>
             <PizzasPage setOpenModal={setOpenModal} setPizzaModal={setPizzaModal} />
@@ -23,20 +38,23 @@ const  MenuPage = () => {
                 >
                     
                     <ModalHeader>Pedido</ModalHeader>
-                    <ModalContent image style={{width:"100%", gap:'20px', display:"flex", textAlign: "center", alignItems:"center"}}>
+                    <ModalContent image style={{width:"100%", gap:'20px', display:"flex", textAlign: "center", alignItems:"center", justifyContent:"space-around"}}>
                         <Image size='medium' src={!! pizzaModal?.image ? pizzaModal?.image : LogoK} wrapped />
                         <ModalDescription style={{display:"flex",gap:"40px", flexDirection:"column"}}>
                         <Header style={{textTransform:"uppercase"}}>{pizzaModal?.nome}</Header>
                         <DivModal>
-                            {pizzaModal?.ingredients.map((value)=><div style={{gap:"10px",textTransform:"uppercase", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                            {pizzaModal?.ingredients.map((value, id)=><div key={id} style={{gap:"10px",textTransform:"uppercase", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                                 <Image size="mini" src="https://www.casadecarnespine.com.br/wp-content/uploads/2023/01/linguica-calabresa-defumada.jpg"/>
                                 {value}
                                 <div style={{display:"flex", gap:"10px", alignItems: "center"}}>
-                                    <Button icon="minus" color="red" />
-                                    <ButtonOr style={{color:"black"}} text={0} />
-                                    <Button icon="plus" color="green" />
+                                    <Form style={{display:"flex", gap:"10px"}}>
+                                        <Button icon="minus" color="red" onClick={()=>{}}/>
+                                        <input disabled style={{margin:"auto", width:'40px'}} placeholder={value===adicional?.ingrediente?`${adicional?.quantidade}`:`${0}`}  />
+                                        <Button icon="plus" color="green" />
+                                    </Form>
                                 </div>
                             </div>)}
+
                         </DivModal>
                         </ModalDescription>
                         </ModalContent>
