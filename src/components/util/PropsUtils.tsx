@@ -10,5 +10,16 @@ export interface PizzaProps {
         t: string,
         p: number,
     }[];
-    ingredients: string[];
+    ingredientes: string[];
 };
+
+export interface ItensVendaProps {
+    nome: string;
+    image: string;
+    preco: {
+        t: string;
+        p: number;
+    };
+    ingredientes?: string[];
+    quantidade: number;
+}[];

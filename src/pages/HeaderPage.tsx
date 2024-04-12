@@ -27,9 +27,7 @@ const elementosHeader: ElementosHeaderProps[] = [
  }
 ]
 
-const HeaderPage = ({paginaAtualHeader, setPaginaAtualHeader}:any) => {
-
-    useEffect(()=>{},[paginaAtualHeader]);
+const HeaderPage = () => {
     return <DivStyled>
                  <Image src={LogoK} size='mini' />
                  <Nav>
@@ -37,18 +35,15 @@ const HeaderPage = ({paginaAtualHeader, setPaginaAtualHeader}:any) => {
                          key={id}
                          style={({ isActive, isPending, isTransitioning }) => {
                              return {
-                             fontWeight: isActive ? "bold" : "",
-                             color: isPending ? "red" : "black",
-                             viewTransitionName: isTransitioning ? "slide" : "",
-                             backgroundColor: "rgb(0,0,0,0)",
-                             padding: '0',
+                                color:"white",
+                                backgroundColor: isActive?'#ff5050':'#4833ff',
+                                padding: '10px 20px',
+                                borderRadius: '5px',
                              };
                          }}
                          to={`/${value.link}`}
                          >
-                             <Button onClick={()=>setPaginaAtualHeader(value.nome)} color={(paginaAtualHeader===value.nome)?'red':'blue'}>
-                                 {value.nome}
-                             </Button>
+                            {value.nome}
                      </NavLink>)}
                     
                  </Nav>

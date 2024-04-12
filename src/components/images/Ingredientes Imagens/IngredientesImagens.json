@@ -1,0 +1,14 @@
+{
+    "atum":"src/components/images/Ingredientes Imagens/atum.png",
+    "bacon":"src/components/images/Ingredientes Imagens/bagon.png",
+    "cebola":"src/components/images/Ingredientes Imagens/cebola.png",
+    "ervilha":"src/components/images/Ingredientes Imagens/ervilha",
+    "milho":"src/components/images/Ingredientes Imagens/milho.png",
+    "minipizza":"src/components/images/Ingredientes Imagens/minipizza.png",
+    "mussarela":"src/components/images/Ingredientes Imagens/mussarela.png",
+    "azeitona":"src/components/images/Ingredientes Imagens/oliva.png",
+    "pimentão":"src/components/images/Ingredientes Imagens/pimentao.png",
+    "presunto":"src/components/images/Ingredientes Imagens/presunto.png",
+    "queijo":"src/components/images/Ingredientes Imagens/queijo.png",
+    "tomate":"src/components/images/Ingredientes Imagens/tomate.png"
+}

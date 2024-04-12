@@ -6,11 +6,14 @@ import { LogoK } from "../components/images";
 import styled from "styled-components";
 import { PizzaProps } from "../components/util/PropsUtils";
 import { IngredientesAdicionais } from "../components/util/ObjetosUtils";
+import { IngredientesImagens } from "../components/images/Ingredientes Imagens";
 
 const  MenuPage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [pizzaModal, setPizzaModal] = useState<PizzaProps>();
     const [ingredientesAdicionais, setIngredientesAdicionais] = useState(IngredientesAdicionais);
+    const [ingredientesImagem] = useState(IngredientesImagens);
+
     return (
         <Div>
             <PizzasPage setOpenModal={setOpenModal} setPizzaModal={setPizzaModal} />
@@ -27,8 +30,8 @@ const  MenuPage = () => {
                     <ModalDescription style={{display:"flex",gap:"40px", flexDirection:"column"}}>
                     <Header style={{textTransform:"uppercase"}}>{pizzaModal?.nome}</Header>
                     <DivModal>
-                        {pizzaModal?.ingredients.map((value, id)=><div key={id} style={{gap:"10px",textTransform:"uppercase", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-                            <Image size="mini" src="https://www.casadecarnespine.com.br/wp-content/uploads/2023/01/linguica-calabresa-defumada.jpg"/>
+                        {pizzaModal?.ingredientes.map((value, id)=><div key={id} style={{gap:"10px",textTransform:"uppercase", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                            <Image size="mini" src={ingredientesImagem[value]??ingredientesImagem.minipizza}/>
                             {value}
                             <div style={{display:"flex", gap:"10px", alignItems: "center"}}>
                                 <Form style={{display:"flex", gap:"10px"}}>

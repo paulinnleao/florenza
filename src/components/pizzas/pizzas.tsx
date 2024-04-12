@@ -26,7 +26,7 @@ const pizzas : PizzaCadastro = {
                     p: 53.00,
                 }
             ],
-            ingredients: [
+            ingredientes: [
                 'calabresa',
                 'tomate',
                 'molho de tomate',
@@ -50,7 +50,7 @@ const pizzas : PizzaCadastro = {
                     p: 53.00,
                 }
             ],
-            ingredients: [
+            ingredientes: [
                 'calabresa',
                 'tomate',
                 'molho de tomate',
@@ -74,7 +74,7 @@ const pizzas : PizzaCadastro = {
                     p: 53.00,
                 }
             ],
-            ingredients: [
+            ingredientes: [
                 'calabresa',
                 'tomate',
                 'molho de tomate',
@@ -98,7 +98,7 @@ const pizzas : PizzaCadastro = {
                     p: 53.00,
                 }
             ],
-            ingredients: [
+            ingredientes: [
                 'calabresa',
                 'tomate',
                 'molho de tomate',
@@ -125,7 +125,7 @@ const pizzas : PizzaCadastro = {
                     p: 53.00,
                 }
             ],
-            ingredients: [
+            ingredientes: [
                 'calabresa',
                 'tomate',
                 'molho de tomate',
@@ -152,7 +152,7 @@ const pizzas : PizzaCadastro = {
                     p: 53.00,
                 }
             ],
-            ingredients: [
+            ingredientes: [
                 'calabresa',
                 'tomate',
                 'molho de tomate',

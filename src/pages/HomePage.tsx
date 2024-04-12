@@ -1,22 +1,34 @@
-import {Button, Image} from 'semantic-ui-react';
+import {Button} from 'semantic-ui-react';
 import {useNavigate} from "react-router-dom";
 import { Div } from '../components/util/utilStyledHtml';
-
-const backgroundImage = '../components/images/planoDeFundo.jpeg'
+import styled from 'styled-components';
 
 export const  HomePage = () => {
-
     const navigate = useNavigate();
     return (
-        <Div style={{margin:"auto"}}>
-            <Image src={backgroundImage}/>
+        <DivStyled >
             <Button 
             size = 'massive'
-            onClick={() => navigate("/menu")}>
-                Clique aqui para ver o cardápio
-            </Button>
-        </Div>
+            style={{
+                borderRadius: '100%',
+                height:'450px',
+                backgroundColor:'rgb(255, 255, 255, 0.1)',
+                textShadow: '2px 2px #ffffff',
+                color:'#000'
+            }}
+            content={'Clique aqui para ver o cardápio'}
+            onClick={() => navigate("/menu")} />
+        </DivStyled>
     )
 
 };
 
+const DivStyled = styled(Div)`
+    margin: auto;
+    background-image: url('src/components/images/pizzaHome.png');
+    background-size: 31.25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:500px;
+    display: flex;
+`;

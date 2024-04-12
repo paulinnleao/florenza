@@ -40,7 +40,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                 </DescricaoPizza>
               </ItemMeta>
               <ItemDescription>
-                <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredients.join(", ")}.</label></p>
+                <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredientes.join(", ")}.</label></p>
               </ItemDescription>
             </ItemContent>
           </Item>
@@ -80,7 +80,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                 </DescricaoPizza>
               </ItemMeta>
               <ItemDescription>
-              <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredients.join(", ")}.</label></p>
+              <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredientes.join(", ")}.</label></p>
               </ItemDescription>
             </ItemContent>
           </Item>
@@ -120,7 +120,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                 </DescricaoPizza>
               </ItemMeta>
               <ItemDescription>
-              <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredients.join(", ")}.</label></p>
+              <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredientes.join(", ")}.</label></p>
               </ItemDescription>
             </ItemContent>
           </Item>
@@ -132,7 +132,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
 
 export default PizzasPage;
 
-const DescricaoPizza = styled.div`
+export const DescricaoPizza = styled.div`
   display: flex;
   flex-direction: wrap;
   gap: 10px;
