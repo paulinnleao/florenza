@@ -29,19 +29,27 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
             <ItemContent>
               <ItemHeader style={{}} >{pizza.nome}</ItemHeader>
               <ItemMeta>
+              <ItemDescription>
+                <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredientes.join(", ")}.</label></p>
+              </ItemDescription>
               <DescricaoPizza><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
                     <p style={{textTransform:"uppercase"}}>{value.t}</p>
                     <p>R$ {value.p}</p>
                     <Button style={{position: "static"}} onClick={()=>{
                       setOpenModal(true)
-                      setPizzaModal({...pizza, t: value.t, p: value.p})
+                      setPizzaModal({
+                        image: pizza.image,
+                        nome: pizza.nome,
+                        tamanhoPreco:[{
+                          t: value.t,
+                          p: value.p
+                        }],
+                        ingredientes: pizza.ingredientes
+                      })
                     }} icon='add to cart'/>
                   </div>)}
                 </DescricaoPizza>
               </ItemMeta>
-              <ItemDescription>
-                <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredientes.join(", ")}.</label></p>
-              </ItemDescription>
             </ItemContent>
           </Item>
           )}
@@ -74,7 +82,15 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                     <p>R$ {value.p}</p>
                     <Button style={{position: "static"}} onClick={()=>{
                       setOpenModal(true)
-                      setPizzaModal({...pizza, t: value.t, p: value.p})
+                      setPizzaModal({
+                        image: pizza.image,
+                        nome: pizza.nome,
+                        tamanhoPreco:[{
+                          t: value.t,
+                          p: value.p
+                        }],
+                        ingredientes: pizza.ingredientes
+                      })
                     }} icon='add to cart'/>
                   </div>)}
                 </DescricaoPizza>
@@ -114,7 +130,15 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                     <p>R$ {value.p}</p>
                     <Button style={{position: "static"}} onClick={()=>{
                       setOpenModal(true)
-                      setPizzaModal({...pizza, t: value.t, p: value.p})
+                      setPizzaModal({
+                        image: pizza.image,
+                        nome: pizza.nome,
+                        tamanhoPreco:[{
+                          t: value.t,
+                          p: value.p
+                        }],
+                        ingredientes: pizza.ingredientes
+                      })
                     }} icon='add to cart'/>
                   </div>)}
                 </DescricaoPizza>

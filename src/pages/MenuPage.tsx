@@ -7,13 +7,17 @@ import styled from "styled-components";
 import { PizzaProps } from "../components/util/PropsUtils";
 import { IngredientesAdicionais } from "../components/util/ObjetosUtils";
 import { IngredientesImagens } from "../components/images/Ingredientes Imagens";
-
+import { useStoreActions } from "easy-peasy";
 
 const  MenuPage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [pizzaModal, setPizzaModal] = useState<PizzaProps>();
     const [ingredientesAdicionais, setIngredientesAdicionais] = useState(IngredientesAdicionais);
     const [ingredientesImagem] = useState(IngredientesImagens);
+    const [quantidadeProduto, setQuantidadeProduto] = useState<number>(1)
+
+    const adicionaPedido = useStoreActions<any>((actions)=>actions.adicionar);
+
     return (
         <Div>
             <PizzasPage setOpenModal={setOpenModal} setPizzaModal={setPizzaModal} />
@@ -45,15 +49,47 @@ const  MenuPage = () => {
                     </DivModal>
                     </ModalDescription>
                     </ModalContent>
-                    <ModalActions>
-                        <Button content="Voltar" color='black' onClick={() => setOpenModal(false)} />
-                        <Button
-                        content="Adicionar"
-                        labelPosition='right'
-                        icon='checkmark'
-                        onClick={() => setCarrinhoProps()}
-                        positive
-                        />
+                    <ModalActions style={{
+                        display:'flex',
+                        justifyContent:'space-around',
+                        alignItems:"center"
+                    }}>
+                        <div style={{display:"flex", gap:"10px", alignItems: "center"}}>
+                            <Form style={{display:"flex", gap:"10px"}}>
+                                <Button icon="minus" color="red" onClick={()=>(setQuantidadeProduto(quantidadeProduto-1))}/>
+                                <input disabled style={{margin:"auto", width:'80px', textAlign:'center'}} placeholder={`${quantidadeProduto}`}  />
+                                <Button icon="plus" color="green" onClick={()=>(setQuantidadeProduto(quantidadeProduto+1))}/>
+                            </Form>
+                        </div>
+                        <div>
+                            <Button content="Voltar" color='black' onClick={() => setOpenModal(false)} />
+                            <Button
+                            content="Adicionar"
+                            labelPosition='right'
+                            icon='checkmark'
+                            onClick={() => {
+                                if(quantidadeProduto>0){
+                                    adicionaPedido(
+                                    {
+                                        nome: pizzaModal?.nome,
+                                        image:  pizzaModal?.image,
+                                        preco: {
+                                            t: pizzaModal?.tamanhoPreco[0].t,
+                                            p: pizzaModal?.tamanhoPreco[0].p,
+                                        },
+                                        ingredientes: pizzaModal?.ingredientes,
+                                        quantidade: quantidadeProduto,
+                                    }
+                                )
+                            }
+                            setQuantidadeProduto(1);
+                            setIngredientesAdicionais(IngredientesAdicionais);
+                            setOpenModal(false);
+                        }
+                        }
+                            positive
+                            />
+                        </div>
                     </ModalActions>
                 </Modal>
         </Div>

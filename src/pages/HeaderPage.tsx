@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import '../components/styles/HeaderStyled.css'
 import { Div } from "../components/util/utilStyledHtml";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { LogoK } from "../components/images";
+import ModalLoginCadastro from "./ModalLoginCadastro";
 
 interface ElementosHeaderProps {
     nome: string;
@@ -28,6 +29,7 @@ const elementosHeader: ElementosHeaderProps[] = [
 ]
 
 const HeaderPage = () => {
+    const [openModal, setOpenModal] = useState(false);
     return <DivStyled>
                  <Image src={LogoK} size='mini' />
                  <Nav>
@@ -45,8 +47,9 @@ const HeaderPage = () => {
                          >
                             {value.nome}
                      </NavLink>)}
-                    
                  </Nav>
+                <Button positive content='Entrar' icon='sign-in'  onClick={()=>{setOpenModal(true);}}/>
+                {openModal && <ModalLoginCadastro openModal={openModal} setOpenModal={setOpenModal} />}
          </DivStyled>
     
 }
@@ -57,6 +60,7 @@ const DivStyled = styled(Div)`
     display: flex;
     justify-content: flex-start;
     gap: 500px;
+    width: 100%;
 `;
 const Nav = styled.nav`
     display: flex;

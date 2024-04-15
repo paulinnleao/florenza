@@ -22,5 +22,4 @@ export interface ItensVendaProps {
     };
     ingredientes?: string[];
     quantidade: number;
-    itemAprovado: boolean;
 }[];
