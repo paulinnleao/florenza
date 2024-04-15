@@ -14,7 +14,7 @@ interface ElementosHeaderProps {
 const elementosHeader: ElementosHeaderProps[] = [
  {
     nome: 'Inicio',
-    link: 'home',
+    link: '',
 
  },
  {
@@ -22,8 +22,8 @@ const elementosHeader: ElementosHeaderProps[] = [
     link: 'menu',
  },
  {
-    nome: 'Sacola',
-    link: 'sacola',
+    nome: 'Carrinho',
+    link: 'carrinho',
  }
 ]
 

@@ -8,12 +8,12 @@ import { PizzaProps } from "../components/util/PropsUtils";
 import { IngredientesAdicionais } from "../components/util/ObjetosUtils";
 import { IngredientesImagens } from "../components/images/Ingredientes Imagens";
 
+
 const  MenuPage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [pizzaModal, setPizzaModal] = useState<PizzaProps>();
     const [ingredientesAdicionais, setIngredientesAdicionais] = useState(IngredientesAdicionais);
     const [ingredientesImagem] = useState(IngredientesImagens);
-
     return (
         <Div>
             <PizzasPage setOpenModal={setOpenModal} setPizzaModal={setPizzaModal} />
@@ -51,7 +51,7 @@ const  MenuPage = () => {
                         content="Adicionar"
                         labelPosition='right'
                         icon='checkmark'
-                        onClick={() => setOpenModal(false)}
+                        onClick={() => setCarrinhoProps()}
                         positive
                         />
                     </ModalActions>

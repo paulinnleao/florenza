@@ -6,7 +6,7 @@ import MenuPage from './MenuPage';
 import '../components/styles/AppStyled.css'
 import FooterPage from './FooterPage';
 import FundoSite from '../components/images/FundoSite.png'
-import SacolaPage from './SacolaPage';
+import CarrinhoPage from './CarrinhoPage';
 
 const App = () => {
     return <Body style={{backgroundImage:FundoSite}}>
@@ -16,9 +16,9 @@ const App = () => {
                     </Header>
                     <Body>
                             <Routes>
-                                <Route path="/home" element={<HomePage/>}/>
+                                <Route path="/" element={<HomePage/>}/>
                                 <Route path="/menu" element={<MenuPage/>}/>
-                                <Route path="/sacola" element={<SacolaPage props={''}/>}/>
+                                <Route path="/carrinho" element={<CarrinhoPage props={''}/>}/>
                             </Routes>
                     </Body>
                     <Footer>
