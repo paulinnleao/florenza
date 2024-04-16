@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { Button, Header, ItemContent, ItemDescription, ItemHeader, ItemImage, ItemMeta, TransitionablePortal } from 'semantic-ui-react'
 import styled from 'styled-components'
-import { DescricaoPizza } from './PizzasPage'
+import { DescricaoProduto } from './PizzasPage'
 import { ItensVendaProps } from '../components/util/PropsUtils'
 import { useNavigate } from 'react-router-dom'
 import { useStoreActions, useStoreState } from 'easy-peasy'
@@ -147,7 +147,7 @@ const DivItensCarrinho = styled.div`
     width: 100%;
 `;
 
-const DescricaoPizzaCarrinho = styled(DescricaoPizza)`
+const DescricaoPizzaCarrinho = styled(DescricaoProduto)`
     display: flex;
     flex-direction: column;
     margin: left;

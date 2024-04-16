@@ -32,7 +32,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
               <ItemDescription>
                 <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredientes.join(", ")}.</label></p>
               </ItemDescription>
-              <DescricaoPizza><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
+              <DescricaoProduto><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
                     <p style={{textTransform:"uppercase"}}>{value.t}</p>
                     <p>R$ {value.p}</p>
                     <Button style={{position: "static"}} onClick={()=>{
@@ -48,7 +48,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                       })
                     }} icon='add to cart'/>
                   </div>)}
-                </DescricaoPizza>
+                </DescricaoProduto>
               </ItemMeta>
             </ItemContent>
           </Item>
@@ -77,7 +77,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
             <ItemContent>
               <ItemHeader >{pizza.nome}</ItemHeader>
               <ItemMeta>
-              <DescricaoPizza><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
+              <DescricaoProduto><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
                     <p style={{textTransform:"uppercase"}}>{value.t}</p>
                     <p>R$ {value.p}</p>
                     <Button style={{position: "static"}} onClick={()=>{
@@ -93,7 +93,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                       })
                     }} icon='add to cart'/>
                   </div>)}
-                </DescricaoPizza>
+                </DescricaoProduto>
               </ItemMeta>
               <ItemDescription>
               <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredientes.join(", ")}.</label></p>
@@ -125,7 +125,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
             <ItemContent>
               <ItemHeader >{pizza.nome}</ItemHeader>
               <ItemMeta>
-              <DescricaoPizza><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
+              <DescricaoProduto><strong>Valores:</strong> {pizza.tamanhoPreco.map((value, id)=> <div key={id}>
                     <p style={{textTransform:"uppercase"}}>{value.t}</p>
                     <p>R$ {value.p}</p>
                     <Button style={{position: "static"}} onClick={()=>{
@@ -141,7 +141,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
                       })
                     }} icon='add to cart'/>
                   </div>)}
-                </DescricaoPizza>
+                </DescricaoProduto>
               </ItemMeta>
               <ItemDescription>
               <p><strong>Ingredientes: </strong><label style={{textTransform:"uppercase"}}>{pizza.ingredientes.join(", ")}.</label></p>
@@ -156,7 +156,7 @@ const PizzasPage = ({setPizzaModal, setOpenModal}:any) =>  {
 
 export default PizzasPage;
 
-export const DescricaoPizza = styled.div`
+export const DescricaoProduto = styled.div`
   display: flex;
   flex-direction: wrap;
   gap: 10px;

@@ -30,27 +30,29 @@ const elementosHeader: ElementosHeaderProps[] = [
 
 const HeaderPage = () => {
     const [openModal, setOpenModal] = useState(false);
-    return <DivStyled>
-                 <Image src={LogoK} size='mini' />
-                 <Nav>
-                     {elementosHeader.map((value, id)=><NavLink
-                         key={id}
-                         style={({ isActive, isPending, isTransitioning }) => {
-                             return {
-                                color:"white",
-                                backgroundColor: isActive?'#ff5050':'#4833ff',
-                                padding: '10px 20px',
-                                borderRadius: '5px',
-                             };
-                         }}
-                         to={`/${value.link}`}
-                         >
-                            {value.nome}
-                     </NavLink>)}
-                 </Nav>
-                <Button positive content='Entrar' icon='sign-in'  onClick={()=>{setOpenModal(true);}}/>
-                {openModal && <ModalLoginCadastro openModal={openModal} setOpenModal={setOpenModal} />}
-         </DivStyled>
+    return <OtherDiv>
+        <Image src={LogoK} size='mini' />
+            <DivStyled>
+                    <Nav>
+                        {elementosHeader.map((value, id)=><NavLink
+                            key={id}
+                            style={({ isActive, isPending, isTransitioning }) => {
+                                return {
+                                    color:"white",
+                                    backgroundColor: isActive?'#ff5050':'#4833ff',
+                                    padding: '10px 20px',
+                                    borderRadius: '5px',
+                                };
+                            }}
+                            to={`/${value.link}`}
+                            >
+                                {value.nome}
+                        </NavLink>)}
+                    </Nav>
+                    {openModal && <ModalLoginCadastro openModal={openModal} setOpenModal={setOpenModal} />}
+            </DivStyled>
+            <Button positive content='Entrar' icon='sign-in'  onClick={()=>{setOpenModal(true);}}/>
+        </OtherDiv>
     
 }
 
@@ -60,8 +62,11 @@ const DivStyled = styled(Div)`
     display: flex;
     justify-content: flex-start;
     gap: 500px;
-    width: 100%;
 `;
 const Nav = styled.nav`
     display: flex;
+`;
+const OtherDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
 `;

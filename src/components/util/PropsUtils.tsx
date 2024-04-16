@@ -1,6 +1,6 @@
 export interface AdicionalProps {
-    ingrediente: string,
-    quantidade: number,
+    ingrediente: string;
+    quantidade: number;
 }[];
 
 export interface PizzaProps {
@@ -22,4 +22,16 @@ export interface ItensVendaProps {
     };
     ingredientes?: string[];
     quantidade: number;
+}[];
+
+export interface ProdutosProps {
+    categoria: string;
+    produtos: [{
+        nome: string;
+        tamanhoPreco: {
+            t: string;
+            p: number;
+        }[];
+        image: string;
+    }];
 }[];

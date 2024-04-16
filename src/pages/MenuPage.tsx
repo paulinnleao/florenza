@@ -8,6 +8,7 @@ import { PizzaProps } from "../components/util/PropsUtils";
 import { IngredientesAdicionais } from "../components/util/ObjetosUtils";
 import { IngredientesImagens } from "../components/images/Ingredientes Imagens";
 import { useStoreActions } from "easy-peasy";
+import OutrosProdutosPage from "./OutrosProdutosPage";
 
 const  MenuPage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
@@ -21,6 +22,7 @@ const  MenuPage = () => {
     return (
         <Div>
             <PizzasPage setOpenModal={setOpenModal} setPizzaModal={setPizzaModal} />
+            <OutrosProdutosPage />
             <Modal
                 onClose={() => setOpenModal(false)}
                 onOpen={() => setOpenModal(true)}
