@@ -4,6 +4,8 @@ import 'semantic-ui-css/semantic.min.css'
 import App from './pages/App'
 import './index.css'
 import { StoreProvider, action, createStore } from 'easy-peasy'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
 
 
 const store = createStore({
@@ -16,5 +18,6 @@ const store = createStore({
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <StoreProvider store={store}>
         <App/>
+        <ToastContainer />
     </StoreProvider>
 )

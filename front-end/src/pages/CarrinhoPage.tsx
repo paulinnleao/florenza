@@ -42,6 +42,7 @@ const CarrinhoInitialValues = [
 const CarrinhoPage = ({props}) => {
     const carrinho = useStoreState((state) => state.pedido);
     const navigate = useNavigate();
+    const [logado] = useState<boolean>(false);
     const valorTotal = useMemo(()=>{
         if(carrinho.length>0){
             let emptyList = carrinho.map((value)=>(value?.preco.p*value?.quantidade));

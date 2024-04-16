@@ -5,18 +5,25 @@ import styled from "styled-components";
 import { DescricaoProduto } from "./PizzasPage";
 import produtos from "../components/produtos/produtos";
 import { useStoreActions } from "easy-peasy";
+import { Bounce, ToastContainer, toast } from "react-toastify";
 
 
 const OutrosProdutosPage = () => {
     
     const adicionaPedido = useStoreActions<any>((actions)=>actions.adicionar);
     const [quantidade, setQuantidade] = useState<number>(1);
-    const [itemSelecionado, setItemSelecionado] = useState();
+    const [itemSelecionado, setItemSelecionado] = useState(undefined);
     return <div style={{padding:'2rem'}}>
         {!!produtos && produtos.map((value, id)=>
                 <DivStyled key={id} style={{paddingBottom: '2rem'}}>
                     <Header size='huge' block>{value.categoria}</Header>
-                    <ItemGroup>
+                    <ItemGroup
+                    style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '20px'
+                    }}
+                    >
                         {value.produtos.map((produto, id) => 
                             <Item  key={id} style={{
                                 width: '500px',
@@ -35,14 +42,18 @@ const OutrosProdutosPage = () => {
                                     <DescricaoProduto><strong>Valores:</strong> {produto.tamanhoPreco.map((value, id)=> <div key={id}>
                                             <p style={{textTransform:"uppercase"}}>{value.t}</p>
                                             <p>R$ {value.p}</p>
-                                            <Button style={{position: "static"}} onClick={()=>{
-                                                setItemSelecionado( () => {
-                                                    return {
-                                                        t: value.t,
-                                                        p: value.p,
-                                                    }
-                                                })
-                                            }} icon='add to cart'/>
+                                            <Button style={{position: "static"}} color={itemSelecionado?.t === value.t ? 'green' : undefined} onClick={()=>{
+                                                if(itemSelecionado===undefined || itemSelecionado?.t!==value.t)
+                                                    setItemSelecionado( () => {
+                                                        return {
+                                                            t: value.t,
+                                                            p: value.p,
+                                                        }
+                                                    })
+
+                                                else
+                                                    setItemSelecionado(undefined);
+                                            }} icon='circle'/>
                                         </div>)}
                                         </DescricaoProduto>
                                     </ItemMeta>
@@ -56,17 +67,32 @@ const OutrosProdutosPage = () => {
                                         </Form>
                                         <Button positive content='Adicionar' onClick={() => {
                                             if(quantidade > 0){
-                                                adicionaPedido(
-                                                    {
-                                                        nome: produto?.nome,
-                                                        image:  produto?.image,
-                                                        preco: {
-                                                            t: itemSelecionado?.t,
-                                                            p: itemSelecionado?.p,
-                                                        },
-                                                        quantidade: quantidade,
-                                                    }
-                                                )
+                                                if(itemSelecionado === undefined || itemSelecionado === null || itemSelecionado === ''){
+                                                    toast.error('Selecione um produto', {
+                                                        position: "bottom-center",
+                                                        autoClose: 5000,
+                                                        hideProgressBar: false,
+                                                        closeOnClick: true,
+                                                        pauseOnHover: false,
+                                                        draggable: true,
+                                                        progress: undefined,
+                                                        theme: "light",
+                                                        transition: Bounce,
+                                                        });
+                                                }else {
+                                                    adicionaPedido(
+                                                        {
+                                                            nome: produto?.nome,
+                                                            image:  produto?.image,
+                                                            preco: {
+                                                                t: itemSelecionado?.t,
+                                                                p: itemSelecionado?.p,
+                                                            },
+                                                            quantidade: quantidade,
+                                                        }
+                                                    )  
+                                                    setItemSelecionado(undefined);
+                                                } 
                                             }
                                         }} />
                                     </div>
@@ -87,5 +113,4 @@ const OutrosProdutosPage = () => {
 export default OutrosProdutosPage;
 
 const DivStyled = styled.div`
-
 `;
