@@ -1,4 +1,4 @@
-package Cardapio.models;
+package br.com.florenza.cardapio.models;
 
 import jakarta.persistence.*;
 
@@ -19,7 +19,7 @@ public class Cardapio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_CARDAPIO")
-    private Integer id;
+    private Long id;
 
     @Column(name = "NOME")
     private String nome;
@@ -45,7 +45,7 @@ public class Cardapio implements Serializable {
     public Cardapio() {
     }
 
-    public Cardapio(Integer id, String nome, double preco, Date dataCadastro, String status, Boolean prod, String tamanho) {
+    public Cardapio(Long id, String nome, double preco, Date dataCadastro, String status, Boolean prod, String tamanho) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -68,11 +68,11 @@ public class Cardapio implements Serializable {
         return Objects.hash(id, nome, preco, dataCadastro, status, prod, tamanho, pizzasLista);
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
