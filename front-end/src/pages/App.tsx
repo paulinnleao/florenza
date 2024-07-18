@@ -5,11 +5,10 @@ import { HomePage } from './HomePage';
 import MenuPage from './MenuPage';
 import '../components/styles/AppStyled.css'
 import FooterPage from './FooterPage';
-import FundoSite from '../components/images/FundoSite.png'
 import CarrinhoPage from './CarrinhoPage';
 
 const App = () => {
-    return <Body style={{backgroundImage:FundoSite}}>
+    return <div>
                 <BrowserRouter>
                     <Header>
                         <HeaderPage />
@@ -26,7 +25,7 @@ const App = () => {
                     </Footer>
                     
                 </BrowserRouter>
-            </Body>
+            </div>
 }
 
 export default App;
@@ -41,8 +40,6 @@ const Header = styled.div`
     
 const Body = styled.div`
     margin:auto;
-    width: 100%;
-    height: 100%;
 `;
 const Footer = styled.div`
     bottom: 0;

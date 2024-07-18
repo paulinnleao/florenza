@@ -1,12 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import 'semantic-ui-css/semantic.min.css'
-import App from './pages/App'
-import './index.css'
-import { StoreProvider, action, createStore } from 'easy-peasy'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import 'semantic-ui-css/semantic.min.css';
+import App from './pages/App';
+import './index.css';
+import { StoreProvider, action, createStore } from 'easy-peasy';
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify'
-
+import { ToastContainer } from 'react-toastify';
 
 const store = createStore({
     pedido: [],  
