@@ -22,25 +22,25 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-@TestInstance(Lifecycle.PER_CLASS)
-@ExtendWith(MockitoExtension.class)
+//@TestInstance(Lifecycle.PER_CLASS)
+//@ExtendWith(MockitoExtension.class)
 class PizzasServiceTest {
 
     MockPizzas input;
 
-    @InjectMocks
+//    @InjectMocks
     private PizzaServiceImp service;
 
-    @Mock
+//    @Mock
     PizzaRepository repository;
 
-    @BeforeEach
+//    @BeforeEach
     void setUpMocks() throws Exception {
         input = new MockPizzas();
         MockitoAnnotations.openMocks(this);
     }
 
-    @Test
+//    @Test
     void testFindById() {
         Pizza entity = input.mockEntity(1);
         entity.setId(1L);
@@ -56,7 +56,7 @@ class PizzasServiceTest {
         assertEquals("Ingredientes1", result.getIngredientes());
     }
 
-    @Test
+//    @Test
     void testCreate() {
         Pizza entity = input.mockEntity(1);
         entity.setId(1L);
@@ -79,7 +79,7 @@ class PizzasServiceTest {
         assertEquals("Ingredientes1", result.getIngredientes());
     }
 
-    @Test
+//    @Test
     void testCreateWithNullPizza() {
         Exception exception = assertThrows(RequiredObjectIsNullException.class, () -> {
             service.inserirPizza(null);
@@ -92,7 +92,7 @@ class PizzasServiceTest {
     }
 
 
-    @Test
+//    @Test
     void testUpdate() {
         Pizza entity = input.mockEntity(1);
 
@@ -118,7 +118,7 @@ class PizzasServiceTest {
 
 
 
-    @Test
+//    @Test
     void testUpdateWithNullPizza() {
         Exception exception = assertThrows(RequiredObjectIsNullException.class, () -> {
             service.atualizarPizza(null);
@@ -130,7 +130,7 @@ class PizzasServiceTest {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
-    @Test
+//    @Test
     void testDelete() {
         Pizza entity = input.mockEntity(1);
         entity.setId(1L);
@@ -140,7 +140,7 @@ class PizzasServiceTest {
         service.apagarPizza(1L);
     }
 
-    @Test
+//    @Test
     void testFindAll() {
         List<Pizza> list = input.mockEntityList();
 

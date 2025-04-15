@@ -1,9 +1,11 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:3306/florenza?useTimezone=true&serverTimezone=UTC
-    username: root
-    password: admin123
+    url: jdbc:postgresql://toughly-conducive-grub.data-1.use1.tembo.io:5432/postgres
+    username: postgres
+    password: 0G5zEIsXcGi5fwLl
+  flyway:
+    baseline-on-migrate: true
   jpa:
     hibernate:
       ddl-auto: none
@@ -12,6 +14,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
 springdoc:
+#  api-docs:
+#    path: /v1/api-docs
   pathsToMatch: /**
   swagger-ui:
     use-root-path: true

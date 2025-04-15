@@ -21,7 +21,9 @@ const ModalLoginCadastro = ({openModal, setOpenModal}:any) => {
                         <Header>Usuário</Header>
                         <input />
                         <Header>Senha</Header>
-                        <input />
+                        <label>
+                            <input />
+                        </label>
                         <Button style={{marginTop:'15px'}} positive content='Entrar'/>
                     </Form>
                 </ModalContent>

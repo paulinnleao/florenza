@@ -7,12 +7,14 @@ import br.com.florenza.cardapio.models.Pizza;
 import br.com.florenza.cardapio.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import java.util.List;
 
+@Service
 public class PizzaServiceImp implements PizzaService {
 
     @Autowired

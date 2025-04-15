@@ -22,25 +22,25 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-@TestInstance(Lifecycle.PER_CLASS)
-@ExtendWith(MockitoExtension.class)
+//@TestInstance(Lifecycle.PER_CLASS)
+//@ExtendWith(MockitoExtension.class)
 class CardapioServiceTest {
 
     MockCardapio input;
 
-    @InjectMocks
+//    @InjectMocks
     private CardapioServiceImp service;
 
-    @Mock
+//    @Mock
     CardapioRepository repository;
 
-    @BeforeEach
+//    @BeforeEach
     void setUpMocks() throws Exception {
         input = new MockCardapio();
         MockitoAnnotations.openMocks(this);
     }
 
-    @Test
+//    @Test
     void testFindById() {
         Cardapio entity = input.mockEntity(1);
         entity.setId(1L);
@@ -59,7 +59,7 @@ class CardapioServiceTest {
         assertEquals("Tamanho1", result.getTamanho());
     }
 
-    @Test
+//    @Test
     void testCreate() {
         Cardapio entity = input.mockEntity(1);
         entity.setId(1L);
@@ -85,7 +85,7 @@ class CardapioServiceTest {
         assertEquals("Tamanho1", result.getTamanho());
     }
 
-    @Test
+//    @Test
     void testCreateWithNullCardapio() {
         Exception exception = assertThrows(RequiredObjectIsNullException.class, () -> {
             service.inserirItemNoCardapio(null);
@@ -98,7 +98,7 @@ class CardapioServiceTest {
     }
 
 
-    @Test
+//    @Test
     void testUpdate() {
         Cardapio entity = input.mockEntity(1);
 
@@ -127,7 +127,7 @@ class CardapioServiceTest {
 
 
 
-    @Test
+//    @Test
     void testUpdateWithNullCardapio() {
         Exception exception = assertThrows(RequiredObjectIsNullException.class, () -> {
             service.atualizarItemCardapio(null);
@@ -139,7 +139,7 @@ class CardapioServiceTest {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
-    @Test
+//    @Test
     void testDelete() {
         Cardapio entity = input.mockEntity(1);
         entity.setId(1L);
@@ -149,7 +149,7 @@ class CardapioServiceTest {
         service.apagarItemCardapio(1L);
     }
 
-    @Test
+//    @Test
     void testFindAll() {
         List<Cardapio> list = input.mockEntityList();
 

@@ -7,11 +7,13 @@ import br.com.florenza.cardapio.models.Cardapio;
 import br.com.florenza.cardapio.repository.CardapioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import java.util.List;
 
+@Service
 public class CardapioServiceImp implements CardapioService{
     @Autowired
     private CardapioRepository cardapioRepository;
